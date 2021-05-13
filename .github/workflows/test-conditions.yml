@@ -1,6 +1,6 @@
 # This is a workflow to see what will be affected with upcoming changes
 
-name: Test APPLY
+name: Test conditions
 
 # Controls when the action will run. Triggers the workflow on pull request
 # events but only for the master branch
@@ -26,18 +26,18 @@ jobs:
 
     # Runs a `terraform apply` command for project-* using the runners shell
     - name: Run terraform APPLY for project-iam
-      if: ${{ github.event.inputs.project_name }} == 'project-iam'
+      if: github.event.inputs.project_name == 'project-iam'
       run: |
         echo ${{ github.event.inputs.project_name }}
 
     # Should be commented out on first deployment
     - name: Run terraform APPLY for project-core
-      if: ${{ github.event.inputs.project_name }} == 'project-core'
+      if: github.event.inputs.project_name == 'project-core'
       run: |
         echo ${{ github.event.inputs.project_name }}
 
     # Should be commented out on first and second deployment
     - name: Run terraform APPLY for project-apps-dev
-      if: ${{ github.event.inputs.project_name }} == 'project-apps-dev'
+      if: github.event.inputs.project_name == 'project-apps-dev'
       run: |
         echo ${{ github.event.inputs.project_name }}
