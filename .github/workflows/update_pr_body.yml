@@ -1,4 +1,4 @@
-name: "Update Pull Request"
+name: "Link PR with Issue"
 on:
   pull_request:
     types: [opened]
