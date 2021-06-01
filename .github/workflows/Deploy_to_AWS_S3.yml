@@ -1,9 +1,9 @@
-name: Deploy static website to S3 bucket
+name: Deploy static website to AWS S3 bucket
 
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   deploy:
